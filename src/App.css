@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.app-wrapper {
+    margin: 3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.beer-item {
+    padding: 1rem;
+    border-top: 1px solid #bbb;
+    border-bottom: 0px;
+    list-style-type: none;
+    cursor: pointer;
+}
+.beer-item:hover {
+    background-color: #bbb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.beer-item:first-child {
+    border-top: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.beer-color {
+    width: 0.8rem;
+    height: 0.8rem;
+    display: inline-block;
+    margin-right: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.beer-results {
+    position: absolute;
+    max-height: 200px;
+    margin-top: 0px;
+    overflow: auto;
+    width: 300px;
+    border: 1px solid #bbb;
+    padding-left: 0;
+    background-color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hide-results {
+    display: none;
+}
+
+.search-input {
+    padding: 0.8rem;
+    width: 300px;
+    border: 1px solid #bbb;
+    border-radius: 0px;
+}
+
+.search-form {
+    width: 100%;
+}
+
+.search-label {
+    font-weight: 700;
+}
+
+dt {
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.beer-info {
+    border: 1px solid #bbb;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.beer-info h2 {
+    margin-top: 0;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
