@@ -11,15 +11,19 @@ const SearchForm = (props) => {
     };
 
     return (
-        <form>
-            <label htmlFor="search">Enter yo beer style</label>
+        <form className="search-form">
+            <label htmlFor="search" className="search-label sr-only">
+                Find a beer style
+            </label>
             <br />
             <input
                 onChange={handleUpdate}
                 id="search"
+                className="search-input"
                 type="search"
                 ref={inputRef}
-                placeholder="FIND YO BEER 🍺"
+                placeholder="FIND A BEER STYLE 🍺"
+                autoComplete="off"
             />
         </form>
     );
