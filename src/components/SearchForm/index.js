@@ -11,7 +11,7 @@ const SearchForm = (props) => {
         event.preventDefault();
     };
 
-    const handleAbvUpdate = (event) => {
+    const handleAbvUpdate = () => {
         let newAbvRange;
         switch (abvRef.current.value) {
             case "any":
@@ -37,6 +37,9 @@ const SearchForm = (props) => {
         }
 
         props.setAbvRange(newAbvRange);
+        // if (props.searchTerm === null) {
+        //     props.setSearchTerm("");
+        // }
     };
 
     return (

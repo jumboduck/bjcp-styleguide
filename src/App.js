@@ -20,6 +20,7 @@ function App() {
             beer.name.toLowerCase().includes(searchTerm) &&
             checkBeerInRange(beer, "abv", abvRange)
     );
+    //const displayResults = results.length === 0 ? false : true;
 
     return (
         <div className="app-wrapper">
@@ -32,8 +33,11 @@ function App() {
                     setAbvRange={setAbvRange}
                 />
 
-                <div className="beer-results" hidden={!Boolean(searchTerm)}>
-                    {searchTerm !== "" && results.length !== 0 ? (
+                <div
+                    className="beer-results"
+                    hidden={!(Boolean(results) && Boolean(searchTerm))}
+                >
+                    {results.length !== 0 ? (
                         results.map((beer) => (
                             <div
                                 key={beer.name}

@@ -17,10 +17,19 @@ const BeerResult = (props) => {
 
             <strong>{props.name}</strong>
             <div>
-                ABV: {props.stats.abv.low + "% to " + props.stats.abv.high}%
+                ABV:{" "}
+                {props.stats.abv.flexible === "false"
+                    ? props.stats.abv.low + "% to " + props.stats.abv.high + "%"
+                    : "flexible"}
             </div>
             <div>
-                IBU: {props.stats.ibu.low + " to " + props.stats.ibu.high} IBU
+                IBU:{" "}
+                {props.stats.ibu.flexible === "false"
+                    ? props.stats.ibu.low +
+                      " to " +
+                      props.stats.ibu.high +
+                      "IBU"
+                    : "flexible"}
             </div>
         </>
     );
