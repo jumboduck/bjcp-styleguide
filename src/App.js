@@ -13,14 +13,17 @@ const beerList = data[0].category
 
 function App() {
     const [searchTerm, setSearchTerm] = useState(null);
+    const [ibuRange, setIbuRange] = useState("any");
+    const [srmRange, setSrmRange] = useState("any");
     const [abvRange, setAbvRange] = useState("any");
     const [displayedBeer, setDisplayedBeer] = useState(null);
     const results = beerList.filter(
         (beer) =>
             beer.name.toLowerCase().includes(searchTerm) &&
-            checkBeerInRange(beer, "abv", abvRange)
+            checkBeerInRange(beer, "abv", abvRange) &&
+            checkBeerInRange(beer, "srm", srmRange) &&
+            checkBeerInRange(beer, "ibu", ibuRange)
     );
-    //const displayResults = results.length === 0 ? false : true;
 
     return (
         <div className="app-wrapper">
@@ -29,6 +32,10 @@ function App() {
                 <SearchForm
                     searchTerm={searchTerm}
                     setSearchTerm={setSearchTerm}
+                    ibuRange={ibuRange}
+                    setIbuRange={setIbuRange}
+                    srmRange={srmRange}
+                    setSrmRange={setSrmRange}
                     abvRange={abvRange}
                     setAbvRange={setAbvRange}
                 />
