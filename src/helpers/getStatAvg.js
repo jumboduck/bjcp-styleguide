@@ -21,6 +21,8 @@ const getStatAvg = (stat, beer) => {
                 return average.toFixed(3);
             case "ibu":
                 return Math.round(average);
+            default:
+                return console.log("This stat does not exist.");
         }
     }
 };

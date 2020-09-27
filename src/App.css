@@ -4,17 +4,14 @@
 
 .beer-item {
     padding: 1rem;
-    border-top: 1px solid #bbb;
-    border-bottom: 0px;
-    list-style-type: none;
+    border: 1px solid #bbb;
     cursor: pointer;
+    margin: 0.5rem;
+    width: 25%;
+    display: inline-block;
 }
 .beer-item:hover {
-    background-color: #bbb;
-}
-
-.beer-item:first-child {
-    border-top: 0px;
+    background-color: #eee;
 }
 
 .beer-color {
@@ -24,34 +21,37 @@
     margin-right: 0.5rem;
 }
 
-.beer-results {
-    position: absolute;
-    max-height: 200px;
-    margin-top: 0px;
-    overflow: auto;
-    width: 300px;
-    border: 1px solid #bbb;
-    padding-left: 0;
-    background-color: #fff;
-}
-
-.hide-results {
-    display: none;
+.search-form {
+    width: 75%;
 }
 
 .search-input {
     padding: 0.8rem;
-    width: 300px;
+    width: 100%;
     border: 1px solid #bbb;
     border-radius: 0px;
 }
 
-.search-form {
-    width: 100%;
+.selector-input {
+    padding: 0.8rem;
+    width: 95%;
+    border: 1px solid #bbb;
+    border-radius: 0px;
+}
+
+.selector-group {
+    display: inline-block;
+    width: 33.33%;
+    padding-top: 0.5rem;
 }
 
 .search-label {
     font-weight: 700;
+}
+
+.selector-label {
+    display: block;
+    padding-bottom: 0.5rem;
 }
 
 dt {
@@ -62,8 +62,10 @@ dt {
 
 .beer-info {
     border: 1px solid #bbb;
-    padding: 1rem;
+    padding: 1rem 2rem;
     margin-top: 1rem;
+    background-color: #f8f8ff;
+    position: relative;
 }
 
 .beer-info h2 {
@@ -77,4 +79,20 @@ dt {
     width: 1px;
     height: 1px;
     overflow: hidden;
+}
+
+h1 {
+    margin: 0;
+}
+
+.beer-icon {
+    margin: 0 0.5rem;
+}
+
+.close-button {
+    font-size: 2rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
 }
