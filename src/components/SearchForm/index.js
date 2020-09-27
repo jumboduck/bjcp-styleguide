@@ -7,9 +7,10 @@ const SearchForm = (props) => {
     const srmRef = React.useRef(null);
 
     const handleUpdate = (event) => {
+        props.setSearchTerm(inputRef.current.value);
         inputRef.current.value === ""
-            ? props.setSearchTerm(null)
-            : props.setSearchTerm(inputRef.current.value);
+            ? props.setDisplayResults(false)
+            : props.setDisplayResults(true);
         event.preventDefault();
     };
 
@@ -38,6 +39,7 @@ const SearchForm = (props) => {
                 newAbvRange = "any";
         }
         props.setAbvRange(newAbvRange);
+        props.setDisplayResults(true);
     };
 
     const handleSrmUpdate = () => {
@@ -68,6 +70,7 @@ const SearchForm = (props) => {
                 newSrmRange = "any";
         }
         props.setSrmRange(newSrmRange);
+        props.setDisplayResults(true);
     };
 
     const handleIbuUpdate = () => {
@@ -98,6 +101,7 @@ const SearchForm = (props) => {
                 newIbuRange = "any";
         }
         props.setIbuRange(newIbuRange);
+        props.setDisplayResults(true);
     };
 
     return (

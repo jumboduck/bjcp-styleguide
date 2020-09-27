@@ -12,11 +12,12 @@ const beerList = data[0].category
     .sort();
 
 function App() {
-    const [searchTerm, setSearchTerm] = useState(null);
+    const [searchTerm, setSearchTerm] = useState("");
     const [ibuRange, setIbuRange] = useState("any");
     const [srmRange, setSrmRange] = useState("any");
     const [abvRange, setAbvRange] = useState("any");
     const [displayedBeer, setDisplayedBeer] = useState(null);
+    const [displayResults, setDisplayResults] = useState(false);
     const results = beerList.filter(
         (beer) =>
             beer.name.toLowerCase().includes(searchTerm) &&
@@ -32,18 +33,13 @@ function App() {
                 <SearchForm
                     searchTerm={searchTerm}
                     setSearchTerm={setSearchTerm}
-                    ibuRange={ibuRange}
                     setIbuRange={setIbuRange}
-                    srmRange={srmRange}
                     setSrmRange={setSrmRange}
-                    abvRange={abvRange}
                     setAbvRange={setAbvRange}
+                    setDisplayResults={setDisplayResults}
                 />
 
-                <div
-                    className="beer-results"
-                    hidden={!(Boolean(results) && Boolean(searchTerm))}
-                >
+                <div className="beer-results" hidden={!displayResults}>
                     {results.length !== 0 ? (
                         results.map((beer) => (
                             <div
@@ -51,7 +47,8 @@ function App() {
                                 className="beer-item"
                                 onClick={() => {
                                     setDisplayedBeer(beer);
-                                    setSearchTerm(null);
+                                    setSearchTerm("");
+                                    setDisplayResults(false);
                                 }}
                             >
                                 <BeerResult {...beer} />
@@ -69,6 +66,10 @@ function App() {
                     <BeerInfo
                         beer={displayedBeer}
                         setDisplayedBeer={setDisplayedBeer}
+                        setSearchTerm={setSearchTerm}
+                        setIbuRange={setIbuRange}
+                        setSrmRange={setSrmRange}
+                        setAbvRange={setAbvRange}
                     />
                 ) : (
                     <p>No style currently selected.</p>

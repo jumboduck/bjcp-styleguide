@@ -7,6 +7,10 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const BeerInfo = (props) => {
     const handleClose = () => {
         props.setDisplayedBeer(null);
+        props.setAbvRange("any");
+        props.setIbuRange("any");
+        props.setSrmRange("any");
+        props.setSearchTerm("");
     };
 
     const gradient =
