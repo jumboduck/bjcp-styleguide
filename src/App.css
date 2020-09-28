@@ -10,6 +10,7 @@ dt {
 h1 {
     color: #17a7ad;
     font-size: 3rem;
+    margin: 0;
 }
 
 h2 {
@@ -103,11 +104,12 @@ dt {
     font-weight: 700;
     margin-top: 1rem;
     margin-bottom: 0.2rem;
+    font-size: 1.2rem;
 }
 
 .beer-info {
     border: 1px solid #17a7ad;
-    padding: 1rem 2rem;
+    padding: 2rem 5rem;
     margin-top: 1rem;
     background-color: #fff;
     position: relative;
@@ -124,10 +126,6 @@ dt {
     width: 1px;
     height: 1px;
     overflow: hidden;
-}
-
-h1 {
-    margin: 0;
 }
 
 .beer-icon {
@@ -179,6 +177,6 @@ h1 {
     margin-top: 2rem;
     padding-top: 0.5rem;
     border-top: 1px solid #17a7ad;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     text-align: right;
 }
