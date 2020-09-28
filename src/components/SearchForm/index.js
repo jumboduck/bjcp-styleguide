@@ -67,85 +67,90 @@ const SearchForm = (props) => {
 
     return (
         <form className="search-form">
-            <label htmlFor="search" className="search-label sr-only">
-                Find a beer style
-            </label>
-            <br />
-            <input
-                onChange={handleUpdate}
-                id="search"
-                className="search-input"
-                type="search"
-                ref={inputRef}
-                placeholder="FIND A BEER STYLE 🍺"
-                autoComplete="off"
-                value={props.searchTerm}
-            />
+            <div className="text-input">
+                <label htmlFor="search" className="search-label sr-only">
+                    Find a beer style
+                </label>
+                <input
+                    onChange={handleUpdate}
+                    id="search"
+                    className="search-input"
+                    type="search"
+                    ref={inputRef}
+                    placeholder="FIND A BEER STYLE 🍺"
+                    autoComplete="off"
+                    value={props.searchTerm}
+                />
+            </div>
             <div>
-                <div className="selector-group">
-                    <label htmlFor="abv-input" className="selector-label">
-                        ABV:
-                    </label>
-                    <select
-                        onChange={handleAbvUpdate}
-                        id="abv-input"
-                        name="abv-input"
-                        className="selector-input"
-                        ref={abvRef}
-                        value={getKeyByValue(abvTranslation, props.abvRange)}
-                    >
-                        <option value="any">Any</option>
-                        <option value="under-4">Under 4%</option>
-                        <option value="4-to-6">4% to 6%</option>
-                        <option value="6-to-9">6% to 9%</option>
-                        <option value="above-9">Above 9%</option>
-                        <option value="flexible">Flexible</option>
-                    </select>
-                </div>
-                <div className="selector-group">
-                    <label htmlFor="srm-input" className="selector-label">
-                        Color (in SRM):
-                    </label>
-                    <select
-                        onChange={handleSrmUpdate}
-                        id="srm-input"
-                        className="selector-input"
-                        ref={srmRef}
-                        value={getKeyByValue(srmTranslation, props.srmRange)}
-                    >
-                        <option value="any">Any</option>
-                        <option value="1-to-5">1 to 5</option>
-                        <option value="6-to-10">6 to 10</option>
-                        <option value="11-to-15">11 to 15</option>
-                        <option value="16-to-20">16 to 20</option>
-                        <option value="above-20">Above 20</option>
-                        <option value="flexible">Flexible</option>
-                    </select>
-                </div>
-                <div className="selector-group">
-                    <label
-                        htmlFor="ibu-input"
-                        ref={ibuRef}
-                        className="selector-label"
-                    >
-                        IBU:
-                    </label>
-                    <select
-                        onChange={handleIbuUpdate}
-                        id="ibu-input"
-                        className="selector-input"
-                        ref={ibuRef}
-                        value={getKeyByValue(srmTranslation, props.srmRange)}
-                    >
-                        <option value="any">Any</option>
-                        <option value="under-20">Under 20</option>
-                        <option value="20-to-40">20 to 40</option>
-                        <option value="40-to-60">40 to 60</option>
-                        <option value="60-to-80">60 to 80</option>
-                        <option value="above-80">Above 80</option>
-                        <option value="flexible">Flexible</option>
-                    </select>
-                </div>
+                <button className="reset-btn" onClick={props.resetFilters}>
+                    Reset Filters
+                </button>
+            </div>
+
+            <div className="selector-group">
+                <label htmlFor="abv-input" className="selector-label">
+                    ABV:
+                </label>
+                <select
+                    onChange={handleAbvUpdate}
+                    id="abv-input"
+                    name="abv-input"
+                    className="selector-input"
+                    ref={abvRef}
+                    value={getKeyByValue(abvTranslation, props.abvRange)}
+                >
+                    <option value="any">Any</option>
+                    <option value="under-4">Under 4%</option>
+                    <option value="4-to-6">4% to 6%</option>
+                    <option value="6-to-9">6% to 9%</option>
+                    <option value="above-9">Above 9%</option>
+                    <option value="flexible">Flexible</option>
+                </select>
+            </div>
+            <div className="selector-group">
+                <label htmlFor="srm-input" className="selector-label">
+                    Color (in SRM):
+                </label>
+                <select
+                    onChange={handleSrmUpdate}
+                    id="srm-input"
+                    className="selector-input"
+                    ref={srmRef}
+                    value={getKeyByValue(srmTranslation, props.srmRange)}
+                >
+                    <option value="any">Any</option>
+                    <option value="1-to-5">1 to 5</option>
+                    <option value="6-to-10">6 to 10</option>
+                    <option value="11-to-15">11 to 15</option>
+                    <option value="16-to-20">16 to 20</option>
+                    <option value="above-20">Above 20</option>
+                    <option value="flexible">Flexible</option>
+                </select>
+            </div>
+            <div className="selector-group">
+                <label
+                    htmlFor="ibu-input"
+                    ref={ibuRef}
+                    className="selector-label"
+                >
+                    IBU:
+                </label>
+                <select
+                    onChange={handleIbuUpdate}
+                    id="ibu-input"
+                    className="selector-input"
+                    ref={ibuRef}
+                    value={getKeyByValue(ibuTranslation, props.ibuRange)}
+                >
+                    <option value="any">Any</option>
+                    <option value="under-20">Under 20</option>
+                    <option value="20-to-40">20 to 40</option>
+                    <option value="40-to-60">40 to 60</option>
+                    <option value="60-to-80">60 to 80</option>
+                    <option value="above-80">Above 80</option>
+                    <option value="flexible">Flexible</option>
+                </select>
             </div>
         </form>
     );

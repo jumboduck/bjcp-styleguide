@@ -55,25 +55,28 @@ function App() {
                     setDisplayResults={setDisplayResults}
                 />
 
-                <div className="beer-results" hidden={!displayResults}>
-                    {results.length !== 0 ? (
-                        results.map((beer) => (
-                            <div
-                                key={beer.name}
-                                className="beer-item"
-                                onClick={() => {
-                                    setDisplayedBeer(beer);
-                                    resetFilters();
-                                }}
-                            >
-                                <BeerResult {...beer} />
+                <div hidden={!displayResults}>
+                    <div className="beer-results">
+                        {results.length !== 0 ? (
+                            results.map((beer) => (
+                                <div
+                                    key={beer.name}
+                                    className="beer-item"
+                                    onClick={() => {
+                                        setDisplayedBeer(beer);
+                                        setDisplayResults(false);
+                                        resetFilters();
+                                    }}
+                                >
+                                    <BeerResult {...beer} />
+                                </div>
+                            ))
+                        ) : (
+                            <div className="error">
+                                No style matches this search.
                             </div>
-                        ))
-                    ) : (
-                        <div className="error">
-                            No style matches this search.
-                        </div>
-                    )}
+                        )}
+                    </div>
                 </div>
             </div>
             <div>
@@ -88,7 +91,9 @@ function App() {
                         resetFilters={resetFilters}
                     />
                 ) : (
-                    <p>No style currently selected.</p>
+                    <div className="beer-info">
+                        No style currently selected.
+                    </div>
                 )}
             </div>
         </div>

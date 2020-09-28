@@ -24,7 +24,7 @@ const BeerInfo = (props) => {
               ).toString();
 
     return (
-        <div className="beer-info ">
+        <div className="beer-info">
             <FontAwesomeIcon
                 className="close-button"
                 icon={faTimes}
