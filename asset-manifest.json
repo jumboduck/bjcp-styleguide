@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bjcp-styleguide/static/css/main.971d56d2.chunk.css",
+    "main.css": "/bjcp-styleguide/static/css/main.55c55dc8.chunk.css",
     "main.js": "/bjcp-styleguide/static/js/main.abb78d42.chunk.js",
     "main.js.map": "/bjcp-styleguide/static/js/main.abb78d42.chunk.js.map",
     "runtime-main.js": "/bjcp-styleguide/static/js/runtime-main.8ce3242b.js",
@@ -8,15 +8,15 @@
     "static/js/2.b7c09fa4.chunk.js": "/bjcp-styleguide/static/js/2.b7c09fa4.chunk.js",
     "static/js/2.b7c09fa4.chunk.js.map": "/bjcp-styleguide/static/js/2.b7c09fa4.chunk.js.map",
     "index.html": "/bjcp-styleguide/index.html",
-    "precache-manifest.c1d8603948885deac2469fcecfc550ed.js": "/bjcp-styleguide/precache-manifest.c1d8603948885deac2469fcecfc550ed.js",
+    "precache-manifest.b67a9020e20aff017e22d22fdff7c0c5.js": "/bjcp-styleguide/precache-manifest.b67a9020e20aff017e22d22fdff7c0c5.js",
     "service-worker.js": "/bjcp-styleguide/service-worker.js",
-    "static/css/main.971d56d2.chunk.css.map": "/bjcp-styleguide/static/css/main.971d56d2.chunk.css.map",
+    "static/css/main.55c55dc8.chunk.css.map": "/bjcp-styleguide/static/css/main.55c55dc8.chunk.css.map",
     "static/js/2.b7c09fa4.chunk.js.LICENSE.txt": "/bjcp-styleguide/static/js/2.b7c09fa4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8ce3242b.js",
     "static/js/2.b7c09fa4.chunk.js",
-    "static/css/main.971d56d2.chunk.css",
+    "static/css/main.55c55dc8.chunk.css",
     "static/js/main.abb78d42.chunk.js"
   ]
 }
