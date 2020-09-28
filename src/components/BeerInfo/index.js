@@ -30,18 +30,7 @@ const BeerInfo = (props) => {
                 icon={faTimes}
                 onClick={handleClose}
             />
-            <h2>
-                {props.beer.name}
-                {/* <FontAwesomeIcon
-                    icon={faBeer}
-                    className="beer-icon"
-                    style={{
-                        background: "linear-gradient(" + gradient + ")",
-                        backgroundClip: "text",
-                        color: "transparent",
-                    }}
-                /> */}
-            </h2>
+            <h2>{props.beer.name}</h2>
             <dl>
                 <dt>Aroma:</dt>
                 <dd>{props.beer.aroma}</dd>

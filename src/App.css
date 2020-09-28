@@ -9,11 +9,17 @@ dt {
 
 h1 {
     color: #17a7ad;
+    font-size: 3rem;
+}
+
+h2 {
+    color: #17a7ad;
+    font-size: 2rem;
 }
 
 body {
     font-family: "Montserrat", sans-serif;
-    background-color: #fff7f0;
+    background-color: #fdfaf6;
 }
 
 .app-wrapper {
@@ -32,9 +38,16 @@ body {
     border: 1px solid #17a7ad;
     background-color: #f7f7f7;
     cursor: pointer;
+    transition: all 0.5s;
 }
 .beer-item:hover {
     background-color: #fff;
+    border-color: #f15f22;
+    transform: scale(1.05);
+}
+
+.result-stats {
+    margin-left: 2rem;
 }
 
 .beer-color {
@@ -127,16 +140,29 @@ h1 {
     top: 1rem;
     right: 1rem;
     cursor: pointer;
+    color: #f15f22;
+    transition: all 0.5s;
+}
+
+.close-button:hover {
+    transform: rotate(90deg);
 }
 
 .reset-btn {
     padding: 0.8rem;
     width: auto;
     border: 1px solid #f15f22;
+    color: #f15f22;
     border-radius: 0px;
     background-color: #fff;
     cursor: pointer;
     text-transform: uppercase;
+    transition: all 0.5s;
+}
+
+.reset-btn:hover {
+    color: #fff;
+    background-color: #f15f22;
 }
 
 .error {
