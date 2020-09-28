@@ -26,6 +26,14 @@ function App() {
             checkBeerInRange(beer, "ibu", ibuRange)
     );
 
+    const resetSearch = () => {
+        setSearchTerm("");
+        setIbuRange("any");
+        setAbvRange("any");
+        setSrmRange("any");
+        setDisplayResults(false);
+    };
+
     return (
         <div className="app-wrapper">
             <h1>BJCP Styleguide</h1>
@@ -47,8 +55,7 @@ function App() {
                                 className="beer-item"
                                 onClick={() => {
                                     setDisplayedBeer(beer);
-                                    setSearchTerm("");
-                                    setDisplayResults(false);
+                                    resetSearch();
                                 }}
                             >
                                 <BeerResult {...beer} />
