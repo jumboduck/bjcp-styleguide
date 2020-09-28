@@ -7,10 +7,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const BeerInfo = (props) => {
     const handleClose = () => {
         props.setDisplayedBeer(null);
-        props.setAbvRange("any");
-        props.setIbuRange("any");
-        props.setSrmRange("any");
-        props.setSearchTerm("");
+        props.resetFilters();
     };
 
     const gradient =
@@ -35,7 +32,7 @@ const BeerInfo = (props) => {
             />
             <h2>
                 {props.beer.name}
-                <FontAwesomeIcon
+                {/* <FontAwesomeIcon
                     icon={faBeer}
                     className="beer-icon"
                     style={{
@@ -43,7 +40,7 @@ const BeerInfo = (props) => {
                         backgroundClip: "text",
                         color: "transparent",
                     }}
-                />
+                /> */}
             </h2>
             <dl>
                 <dt>Aroma:</dt>

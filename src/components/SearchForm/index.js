@@ -14,94 +14,55 @@ const SearchForm = (props) => {
         event.preventDefault();
     };
 
+    const ibuTranslation = {
+        any: "any",
+        "under-20": [0, 20],
+        "20-to-40": [20, 40],
+        "40-to-60": [40, 60],
+        "60-to-80": [60, 80],
+        "above-80": [80, Infinity],
+        flexible: "flexible",
+    };
+
+    const abvTranslation = {
+        any: "any",
+        "under-4": [0, 4],
+        "4-to-6": [4, 6],
+        "6-to-9": [6, 9],
+        "above-9": [9, Infinity],
+        flexible: "flexible",
+    };
+
+    const srmTranslation = {
+        any: "any",
+        "1-to-5": [1, 5],
+        "6-to-10": [5, 10],
+        "11-to-15": [10, 15],
+        "16-to-20": [15, 20],
+        "above-20": [20, Infinity],
+        flexible: "flexible",
+    };
+
     const handleAbvUpdate = () => {
-        let newAbvRange;
-        switch (abvRef.current.value) {
-            case "any":
-                newAbvRange = "any";
-                break;
-            case "under-4":
-                newAbvRange = [0, 4];
-                break;
-            case "4-to-6":
-                newAbvRange = [4, 6];
-                break;
-            case "6-to-9":
-                newAbvRange = [6, 9];
-                break;
-            case "above-9":
-                newAbvRange = [9, Infinity];
-                break;
-            case "flexible":
-                newAbvRange = "flexible";
-                break;
-            default:
-                newAbvRange = "any";
-        }
+        let newAbvRange = abvTranslation[abvRef.current.value];
         props.setAbvRange(newAbvRange);
         props.setDisplayResults(true);
     };
 
     const handleSrmUpdate = () => {
-        let newSrmRange;
-        switch (srmRef.current.value) {
-            case "any":
-                newSrmRange = "any";
-                break;
-            case "1-to-5":
-                newSrmRange = [1, 5];
-                break;
-            case "6-to-10":
-                newSrmRange = [5, 10];
-                break;
-            case "11-to-15":
-                newSrmRange = [10, 15];
-                break;
-            case "16-to-20":
-                newSrmRange = [15, 20];
-                break;
-            case "above-20":
-                newSrmRange = [20, Infinity];
-                break;
-            case "flexible":
-                newSrmRange = "flexible";
-                break;
-            default:
-                newSrmRange = "any";
-        }
+        let newSrmRange = srmTranslation[srmRef.current.value];
         props.setSrmRange(newSrmRange);
         props.setDisplayResults(true);
     };
 
     const handleIbuUpdate = () => {
-        let newIbuRange;
-        switch (ibuRef.current.value) {
-            case "any":
-                newIbuRange = "any";
-                break;
-            case "under-20":
-                newIbuRange = [0, 20];
-                break;
-            case "20-to-40":
-                newIbuRange = [20, 40];
-                break;
-            case "40-to-60":
-                newIbuRange = [40, 60];
-                break;
-            case "60-to-80":
-                newIbuRange = [60, 80];
-                break;
-            case "above-80":
-                newIbuRange = [80, Infinity];
-                break;
-            case "flexible":
-                newIbuRange = "flexible";
-                break;
-            default:
-                newIbuRange = "any";
-        }
+        let newIbuRange = ibuTranslation[ibuRef.current.value];
         props.setIbuRange(newIbuRange);
         props.setDisplayResults(true);
+    };
+
+    const getKeyByValue = (object, value) => {
+        return Object.keys(object).find((key) => object[key] === value);
     };
 
     return (
@@ -118,6 +79,7 @@ const SearchForm = (props) => {
                 ref={inputRef}
                 placeholder="FIND A BEER STYLE 🍺"
                 autoComplete="off"
+                value={props.searchTerm}
             />
             <div>
                 <div className="selector-group">
@@ -130,6 +92,7 @@ const SearchForm = (props) => {
                         name="abv-input"
                         className="selector-input"
                         ref={abvRef}
+                        value={getKeyByValue(abvTranslation, props.abvRange)}
                     >
                         <option value="any">Any</option>
                         <option value="under-4">Under 4%</option>
@@ -148,6 +111,7 @@ const SearchForm = (props) => {
                         id="srm-input"
                         className="selector-input"
                         ref={srmRef}
+                        value={getKeyByValue(srmTranslation, props.srmRange)}
                     >
                         <option value="any">Any</option>
                         <option value="1-to-5">1 to 5</option>
@@ -171,6 +135,7 @@ const SearchForm = (props) => {
                         id="ibu-input"
                         className="selector-input"
                         ref={ibuRef}
+                        value={getKeyByValue(srmTranslation, props.srmRange)}
                     >
                         <option value="any">Any</option>
                         <option value="under-20">Under 20</option>

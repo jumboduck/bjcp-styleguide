@@ -5,6 +5,8 @@ import SearchForm from "./components/SearchForm";
 import BeerInfo from "./components/BeerInfo";
 import BeerResult from "./components/BeerResult";
 import checkBeerInRange from "./helpers/checkBeerInRange.js";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBeer } from "@fortawesome/free-solid-svg-icons";
 
 const beerList = data[0].category
     .map((category) => category.subcategory)
@@ -26,7 +28,7 @@ function App() {
             checkBeerInRange(beer, "ibu", ibuRange)
     );
 
-    const resetSearch = () => {
+    const resetFilters = () => {
         setSearchTerm("");
         setIbuRange("any");
         setAbvRange("any");
@@ -36,10 +38,16 @@ function App() {
 
     return (
         <div className="app-wrapper">
-            <h1>BJCP Styleguide</h1>
+            <h1>
+                <FontAwesomeIcon icon={faBeer} className="beer-icon" />
+                BJCP Styleguide
+            </h1>
             <div className="search-function">
                 <SearchForm
                     searchTerm={searchTerm}
+                    ibuRange={ibuRange}
+                    abvRange={abvRange}
+                    srmRange={srmRange}
                     setSearchTerm={setSearchTerm}
                     setIbuRange={setIbuRange}
                     setSrmRange={setSrmRange}
@@ -55,14 +63,14 @@ function App() {
                                 className="beer-item"
                                 onClick={() => {
                                     setDisplayedBeer(beer);
-                                    resetSearch();
+                                    resetFilters();
                                 }}
                             >
                                 <BeerResult {...beer} />
                             </div>
                         ))
                     ) : (
-                        <div className="beer-item">
+                        <div className="error">
                             No style matches this search.
                         </div>
                     )}
@@ -77,6 +85,7 @@ function App() {
                         setIbuRange={setIbuRange}
                         setSrmRange={setSrmRange}
                         setAbvRange={setAbvRange}
+                        resetFilters={resetFilters}
                     />
                 ) : (
                     <p>No style currently selected.</p>
