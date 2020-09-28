@@ -167,11 +167,12 @@ h1 {
 
 .error {
     margin: 1rem 0;
-    padding: 2rem;
+    padding: 1rem;
     background-color: #fff;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
     border: 1px solid #f15f22;
+    grid-column: 1/4;
 }
 
 .footer-text {
