@@ -39,7 +39,7 @@ body {
     border: 1px solid #17a7ad;
     background-color: #f7f7f7;
     cursor: pointer;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 .beer-item:hover {
     background-color: #fff;
