@@ -173,3 +173,11 @@ h1 {
     text-align: center;
     border: 1px solid #f15f22;
 }
+
+.footer-text {
+    margin-top: 2rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #17a7ad;
+    font-size: 0.5rem;
+    text-align: right;
+}

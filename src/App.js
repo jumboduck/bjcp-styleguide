@@ -4,6 +4,7 @@ import data from "./data/styleguide.json";
 import SearchForm from "./components/SearchForm";
 import BeerInfo from "./components/BeerInfo";
 import BeerResult from "./components/BeerResult";
+import Footer from "./components/Footer";
 import checkBeerInRange from "./helpers/checkBeerInRange.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBeer } from "@fortawesome/free-solid-svg-icons";
@@ -96,6 +97,7 @@ function App() {
                     </div>
                 )}
             </div>
+            <Footer />
         </div>
     );
 }
